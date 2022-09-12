@@ -23,16 +23,13 @@ function makePromises(e) {
 
     createPromise(position, promiseDelay)
       .then(({ position, delay }) => {
-        Notify.success(
-          `:белая_галочка: Fulfilled promise ${position} in ${delay}ms`,
-          {
-            timeout: 5000,
-          }
-        );
+        Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`, {
+          timeout: 5000,
+        });
       })
 
       .catch(({ position, delay }) => {
-        Notify.failure(`:х: Rejected promise ${position} in ${delay}ms`, {
+        Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`, {
           timeout: 5000,
         });
       });
